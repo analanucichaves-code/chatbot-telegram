@@ -1,77 +1,69 @@
-# Telegram Weather Chatbot (n8n)
+# Weather Bot com N8N
 
-Este projeto implementa um chatbot no Telegram que retorna informações de clima para uma cidade utilizando a API do OpenWeather e o n8n para automação.
+Este projeto implementa um bot de Telegram que consulta a API OpenWeather para retornar informações meteorológicas de uma cidade informada pelo usuário.
 
-## Tecnologias utilizadas
+O workflow foi desenvolvido utilizando a ferramenta **N8N**.
 
-* n8n
-* Telegram Bot API
-* OpenWeather API
+---
 
-## Como funciona
+# Como funciona
 
-O usuário envia o nome de uma cidade no Telegram e o bot retorna:
+O bot recebe o nome de uma cidade via Telegram, consulta a API OpenWeather e retorna as informações meteorológicas atuais.
 
-* Temperatura
-* Umidade
-* Condição do clima
-* Informação se está chovendo ou não
+Fluxo da automação:
 
-O fluxo no n8n realiza:
+Telegram Trigger → HTTP Request (OpenWeather API) → IF → resposta ao usuário
 
-1. Recebe mensagem do Telegram
-2. Extrai o nome da cidade
-3. Consulta a API do OpenWeather
-4. Verifica se está chovendo
-5. Retorna a resposta formatada ao usuário
+---
 
-## Configuração
+# Tratamento de erro
 
-Para executar este projeto, é necessário configurar duas credenciais:
+O workflow possui tratamento de erro para cidades inválidas.
 
-### OPENWEATHER_API_KEY
+Após a chamada da API OpenWeather, o fluxo verifica se o campo `weather[0].main` existe na resposta.
 
-Crie uma conta em:
+- Se existir, significa que a cidade foi encontrada e o bot retorna as informações meteorológicas.
+- Caso contrário, o fluxo segue pelo branch **FALSE** do nó IF e envia uma mensagem informando que a cidade não foi encontrada.
 
-https://openweathermap.org/api
+Isso garante que o usuário receba uma resposta adequada mesmo quando a cidade informada não existir.
 
-e obtenha sua chave de API.
+---
 
-### TELEGRAM_BOT_TOKEN
+# Exemplo de uso
 
-Crie um bot no Telegram usando o BotFather:
+Entrada válida no Telegram:
 
-https://t.me/BotFather
+Rio de Janeiro
 
-Após criar o bot, copie o token gerado.
+Resposta do bot:
 
-## Como importar o workflow no n8n
+Clima em Rio de Janeiro  
+Temperatura: XX°C  
+Umidade: XX%  
+Condição: nublado
 
-1. Abra o n8n
-2. Clique em **Import Workflow**
-3. Selecione o arquivo `workflow-chatbot-telegram.json`
-4. Configure as credenciais do Telegram
-5. Configure a variável `OPENWEATHER_API_KEY`
+---
 
-## Como testar o chatbot
+Entrada inválida:
 
-1. Execute o workflow no n8n
-2. Abra o Telegram
-3. Envie o nome de uma cidade para o bot
+asdfghjkl
 
-Exemplo:
+Resposta do bot:
 
-rio de janeiro
+Não encontrei essa cidade. Tente novamente com o nome correto.
 
-Resposta esperada:
+---
 
-☀️ Não está chovendo em Rio de Janeiro
+# Arquivo do workflow
 
-🌡 Temperatura: 27°C
-💧 Umidade: 73%
+O workflow pode ser importado no N8N utilizando o arquivo:
 
-☁️ Clima: broken clouds
+`workflow.json`
 
-## Observações
+---
 
-Este repositório não inclui tokens ou credenciais reais por motivos de segurança.
+# Tecnologias utilizadas
+
+- N8N
+- Telegram Bot API
+- OpenWeather API
