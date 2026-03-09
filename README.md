@@ -1,4 +1,4 @@
-Projeto desenvolvido como parte de um desafio 2 FTR.
+Projeto desenvolvido desafio 2 FTR.
 
 # Weather Bot com n8n
 
