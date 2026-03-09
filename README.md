@@ -76,7 +76,7 @@ Cidade não encontrada. Tente novamente com o nome correto.
 
 ### Consulta válida
 
-![Cidade válida](cidade_valida.png)
+![Cidade válida](cidade_valida_v2.png)
 
 ### Consulta inválida
 
