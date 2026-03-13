@@ -88,8 +88,7 @@ Cidade não encontrada. Tente novamente com o nome correto.
 
 O workflow pode ser importado no n8n utilizando o arquivo:
 
-`workflow-chatbot-telegram.json`
-
+workflow-chatbot-telegramv2.json
 ---
 
 # Tecnologias utilizadas
