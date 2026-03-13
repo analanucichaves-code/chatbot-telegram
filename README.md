@@ -81,7 +81,7 @@ Cidade não encontrada. Tente novamente com o nome correto.
 
 ### Consulta inválida
 
-[![Cidade inválida](cidade__invalida.png)](https://github.com/analanucichaves-code/chatbot-telegram/blob/main/cidade_%20invalida.png)
+![Cidade inválida](https://raw.githubusercontent.com/analanucichaves-code/chatbot-telegram/main/cidade_%20invalida.png)
 ---
 
 
