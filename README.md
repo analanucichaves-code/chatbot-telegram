@@ -77,7 +77,7 @@ Cidade não encontrada. Tente novamente com o nome correto.
 
 ### Consulta válida
 
-![Cidade válida](cidade__valida.png)
+![Cidade válida](https://raw.githubusercontent.com/analanucichaves-code/chatbot-telegram/main/cidade_%20valida.png)
 
 ### Consulta inválida
 
