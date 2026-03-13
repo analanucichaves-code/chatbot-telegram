@@ -72,23 +72,24 @@ Cidade não encontrada. Tente novamente com o nome correto.
 
 ---
 
+
 ## Demonstração
 
 ### Consulta válida
 
-![Cidade válida](cidade_valida.png)
+![Cidade válida](cidade__valida.png)
 
 ### Consulta inválida
 
-![Cidade inválida](cidade_invalida.png)
-
+![Cidade inválida](cidade__invalida.png)
 ---
+
 
 # Arquivo do workflow
 
 O workflow pode ser importado no n8n utilizando o arquivo:
 
-workflow-chatbot-telegramv2.json
+`workflow-chatbot-telegramv2.json`
 ---
 
 # Tecnologias utilizadas
